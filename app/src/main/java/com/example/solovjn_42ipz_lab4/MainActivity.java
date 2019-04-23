@@ -21,21 +21,21 @@ public class MainActivity extends AppCompatActivity {
     }
 
     public void onClick(View view) {
-        Intent intent = new Intent(this, ActivityChoice.class);
+            Intent intent = new Intent(this, ActivityChoice.class);
 
-        String name = editTextName.getText().toString();
-        String lastName = editTextLastName.getText().toString();
-        if (name.isEmpty()){
-    Toast.makeText(getApplicationContext(), "Ім'я не введено",Toast.LENGTH_SHORT).show();
+            String name = editTextName.getText().toString();
+            String lastName = editTextLastName.getText().toString();
+            if (name.isEmpty()){
+        Toast.makeText(getApplicationContext(), "Не введено ім’я",Toast.LENGTH_SHORT).show();
         }
 
-    else if(lastName.isEmpty()){
-        Toast.makeText(getApplicationContext(), "Прізвище не введено",Toast.LENGTH_SHORT).show();
-    }
-    else{
-        intent.putExtra("name", name);
-        intent.putExtra("lastName", lastName);
-        startActivity(intent);
-    }
+        else if(lastName.isEmpty()){
+            Toast.makeText(getApplicationContext(), "Не введено прізвище",Toast.LENGTH_SHORT).show();
+        }
+        else{
+            intent.putExtra("name", name);
+            intent.putExtra("lastName", lastName);
+            startActivity(intent);
+        }
     }
 }
